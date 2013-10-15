@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="libraryApp">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-resource.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-controller="PatronCtrl">
+    <h2>Snap + AngularJS Todo</h2>
+    <div>
+      <table>
+        <tr ng-repeat="patron in patrons">
+          <td>{{patron.id}}</td>
+          <td>{{patron.number}}</td>
+          <td>
+              <button ng-click="deletePatron({{patron.id}})">Remove</button>
+          </td>
+        </tr>
+      </table>
+      <form ng-submit="addPatron()">
+        <input type="text" ng-model="patronNumber" size="30" placeholder="Number">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html>
