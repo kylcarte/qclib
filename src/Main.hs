@@ -94,7 +94,6 @@ main = do
 getConf :: IO (Config Snap AppConfig)
 getConf = commandLineAppConfig $
   setPort 8000 $
-  setBind "10.0.0.100" $
   defaultConfig
 
 

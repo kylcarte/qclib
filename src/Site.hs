@@ -83,8 +83,7 @@ routes opts =
   , ("/new_user"   , with auth handleNewUser)
   , ("/api/patron" , handlePatrons)
   , ("/static"     , serveDirectory "static")
-  -- , ("/elm/:file"  , serveElmDirectory opts "file")
-  , serveElmDirectory' opts "/elm"
+  , serveElmDirectory opts "/elm"
   , serveElmRuntime opts
   ]
 
